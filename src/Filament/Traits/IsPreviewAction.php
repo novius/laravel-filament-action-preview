@@ -32,7 +32,7 @@ trait IsPreviewAction
         $this->disabled(function () use ($process): bool {
             return $process() === null;
         });
-        $this->url(function () use ($process): string {
+        $this->url(function () use ($process) {
             return $process();
         });
         $this->openUrlInNewTab();
