@@ -2,7 +2,7 @@
 
 namespace Novius\LaravelFilamentActionPreview\Filament\Tables\Actions;
 
-use Filament\Tables\Actions\Action;
+use Filament\Actions\Action;
 use Novius\LaravelFilamentActionPreview\Filament\Traits\IsPreviewAction;
 
 class PreviewAction extends Action

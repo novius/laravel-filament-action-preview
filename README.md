@@ -9,8 +9,8 @@ This package allows you to add [Laravel Filament](https://filamentphp.com/) acti
 
 ## Requirements
 
-* Laravel Filament >= 3.3
-* Laravel >= 12.0
+* Laravel Filament >= 4
+* Laravel >= 11.0
 * Laravel >= 8.2
 
 ## Installation
