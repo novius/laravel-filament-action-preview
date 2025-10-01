@@ -3,15 +3,30 @@
 namespace Novius\LaravelFilamentActionPreview\Filament\Actions;
 
 use Filament\Actions\Action;
-use Novius\LaravelFilamentActionPreview\Filament\Traits\IsPreviewAction;
+use Illuminate\Database\Eloquent\Model;
 
 class PreviewAction extends Action
 {
-    use IsPreviewAction;
+    public static function getDefaultName(): ?string
+    {
+        return 'preview';
+    }
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->setUpPreviewAction();
+
+        $this
+            ->label(trans('laravel-filament-action-preview::messages.open'))
+            ->color('gray')
+            ->icon('heroicon-o-arrow-top-right-on-square')
+            ->labeledFrom('md')
+            ->disabled(function (?Model $record) {
+                return ! method_exists($record, 'previewUrl') || empty($record?->previewUrl());
+            })
+            ->url(function (?Model $record) {
+                return method_exists($record, 'previewUrl') ? $record?->previewUrl() : null;
+            })
+            ->openUrlInNewTab();
     }
 }
