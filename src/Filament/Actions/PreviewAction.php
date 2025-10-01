@@ -21,10 +21,10 @@ class PreviewAction extends Action
             ->color('gray')
             ->icon('heroicon-o-arrow-top-right-on-square')
             ->disabled(function (?Model $record) {
-                return ! method_exists($record, 'previewUrl') || empty($record?->previewUrl());
+                return $record === null || ! method_exists($record, 'previewUrl') || empty($record->previewUrl());
             })
             ->url(function (?Model $record) {
-                return method_exists($record, 'previewUrl') ? $record?->previewUrl() : null;
+                return $record !== null && method_exists($record, 'previewUrl') ? $record->previewUrl() : null;
             })
             ->openUrlInNewTab();
     }
