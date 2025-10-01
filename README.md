@@ -23,15 +23,14 @@ composer require novius/laravel-filament-action-preview
 
 ## Usage
 
-This package provides the following actions:
-* `\Novius\LaravelFilamentActionPreview\Filament\Tables\Actions\PreviewAction` for Tables
-* `\Novius\LaravelFilamentActionPreview\Filament\Actions\PreviewAction` otherwise
+This package provides the following action:
+* `\Novius\LaravelFilamentActionPreview\Filament\Actions\PreviewAction`
 
 ### If the model have a `previewUrl` method :
 
 ```php
 use Filament\Resources\Resource;
-use Novius\LaravelFilamentActionPreview\Filament\Tables\Actions\PreviewAction;
+use Novius\LaravelFilamentActionPreview\Filament\Actions\PreviewAction;
 
 class Post extends Resource
 {
@@ -49,7 +48,7 @@ class Post extends Resource
 ```php
 use App\Models\Post as PostModel;
 use Filament\Resources\Resource;
-use Novius\LaravelFilamentActionPreview\Filament\Tables\Actions\PreviewAction;
+use Novius\LaravelFilamentActionPreview\Filament\Actions\PreviewAction;
 
 class Post extends Resource
 {
