@@ -20,7 +20,6 @@ class PreviewAction extends Action
             ->label(trans('laravel-filament-action-preview::messages.open'))
             ->color('gray')
             ->icon('heroicon-o-arrow-top-right-on-square')
-            ->labeledFrom('md')
             ->disabled(function (?Model $record) {
                 return ! method_exists($record, 'previewUrl') || empty($record?->previewUrl());
             })
